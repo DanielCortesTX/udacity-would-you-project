@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import UnansweredDisplay from './UnansweredDisplay'
-// import AnsweredDisplay from './AnsweredDisplay'
+import UnansweredDisplay from './UnansweredDisplay'
+import AnsweredDisplay from './AnsweredDisplay'
 // import TestDis from './TestDis'
 
 class PollPage extends Component {
@@ -29,7 +29,7 @@ class PollPage extends Component {
             <div> 
             {poll ? 
                 <div>
-                {isAnswered ? <p>answered</p> : <p>unanswered</p>}
+                {isAnswered ? <AnsweredDisplay poll={poll}/> : <UnansweredDisplay poll={poll}/>}
                 </div>
                 :
                 <h1>LOADING</h1>

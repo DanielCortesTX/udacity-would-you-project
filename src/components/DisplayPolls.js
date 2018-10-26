@@ -53,7 +53,8 @@ function mapStateToProps ({ polls, authedUser }){
         return poll.optionOne.votes.includes(authedUser) || poll.optionTwo.votes.includes(authedUser)
     })
     const unansweredQuestions = questionsToFilter.filter((poll) =>{
-        return poll.author !== authedUser 
+        // return poll.author !== authedUser
+        return !poll.optionOne.votes.includes(authedUser) && !poll.optionTwo.votes.includes(authedUser)
     })
     const testUser = polls['8xf0y6ziyjabvozdd253nd']
     return {
