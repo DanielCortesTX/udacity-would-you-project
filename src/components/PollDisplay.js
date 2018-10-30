@@ -9,13 +9,15 @@ class PollDisplay extends Component {
         }
     }
     render() {
-        const { id, optionOne, optionTwo, author } = this.props.poll
+        const { id, optionOne, optionTwo } = this.props.poll
+        const teaseOne = optionOne.text.substring(0, 10)
+        const teaseTwo = optionTwo.text.substring(0, 10)
         return (
             <Link to={`/questions/${id}`}>
                 <div>
-                    <p>{author}</p>
-                    <p>{optionOne.text}</p>
-                    <p>{optionTwo.text}</p>
+                    <p>Would you rather...</p>
+                    <p>{teaseOne}......</p>
+                    <p>{teaseTwo}......</p>
                 </div>
 
             </Link>

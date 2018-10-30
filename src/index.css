@@ -12,3 +12,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.avatar {
+  height: 50px;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.test {
+  text-decoration: none;
+}
+
+.answer-user-display {
+  display: flex;
+  flex-direction: row;
+}
+
+.answer-box {
+  border: 1px solid black;
+  width: 750px;
+}
+
+.ans-selected {
+  background-color: aqua;
+}
+
+.standard-boundaries {
+  margin: 25px;
+  padding: 15px;
+}

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import UnansweredDisplay from './UnansweredDisplay'
 import AnsweredDisplay from './AnsweredDisplay'
-// import TestDis from './TestDis'
 
 class PollPage extends Component {
     constructor(props){
@@ -21,27 +20,34 @@ class PollPage extends Component {
         })
     }
     render() {
-        const { poll, authedUser } = this.props
-        const isAnswered = poll.optionOne.votes.includes(authedUser) || poll.optionTwo.votes.includes(authedUser)
-    ? true
-    : false
+        const { poll, authedUser, userData } = this.props
+        const optionOnePick = poll.optionOne.votes.includes(authedUser)
+        const optionTwoPick = poll.optionTwo.votes.includes(authedUser)
+        const isAnswered = optionOnePick || optionTwoPick
+        const userAnswer = optionOnePick === true ? true : false
         return (
-            <div> 
-            {poll ? 
-                <div>
-                {isAnswered ? <AnsweredDisplay poll={poll}/> : <UnansweredDisplay poll={poll}/>}
-                </div>
-                :
-                <h1>LOADING</h1>
-            } 
+            <div>
+                {poll ? 
+                    <div>
+                    
+                    {isAnswered ? <AnsweredDisplay 
+                        poll={poll}
+                        userData={userData}
+                        userAnswer={userAnswer}
+                        /> : <UnansweredDisplay userData={userData} poll={poll} />}
+                    </div>
+                    :
+                    <h1>LOADING</h1>
+                }
             </div>
         )
     }
 }
 
-function mapStateToProps ({ polls, authedUser }, props){
-    const { id } = props.match.params
+function mapStateToProps ({ polls, authedUser, users }, props){
+    const { id } = this.props.params
     const poll = polls[id]
+    const userData = users[authedUser]
     const dummyData = {
         id: '8xf0y6ziyjabvozdd253zz',
         author: 'standby',
@@ -58,33 +64,37 @@ function mapStateToProps ({ polls, authedUser }, props){
     return {
         id,
         poll: poll ? poll : dummyData,
-        authedUser
+        authedUser,
+        userData
     }
 }
 
 export default connect(mapStateToProps)(PollPage)
 
-// selectedOption: '',
+// const optionOneYes = optionOnePick
+//         const optionTwoYes =  optionTwoPick
 
+// optionOneYes={optionOneYes}
+//                     optionTwoYes={optionTwoYes}
 
-// <form>
-//                     <h2>says</h2>
-//                     <h4>Would you rather...</h4>
-//                         <div>
-//                             <label>
-//                             <input type="radio" value="option1"
-//                             checked={this.state.selectedOption === 'option1'}
-//                             onChange={this.handleOptionChange}/>
-//                             {poll && poll.optionOne.text}
-//                             </label>
-//                         </div>
-//                         <div>
-//                             <label>
-//                             <input type="radio" value="option2"
-//                             checked={this.state.selectedOption === 'option2'}
-//                             onChange={this.handleOptionChange}/>
-//                             {poll && poll.optionTwo.text}
-//                             </label>
-//                         </div>
-//                         <button type="submit">Submit</button>
-//                     </form>
+// const isAnswered = poll.optionOne.votes.includes(authedUser) || poll.optionTwo.votes.includes(authedUser)
+
+// <div>
+//             {authedUser ? 
+//                 <div>
+//                 {poll ? 
+//                     <div>
+                    
+//                     {isAnswered ? <AnsweredDisplay 
+//                         poll={poll}
+//                         userData={userData}
+//                         userAnswer={userAnswer}
+//                         /> : <UnansweredDisplay userData={userData} poll={poll} />}
+//                     </div>
+//                     :
+//                     <h1>LOADING</h1>
+//                 } 
+//                 </div>
+//                 : <NotFoundPage />}
+            
+//             </div>

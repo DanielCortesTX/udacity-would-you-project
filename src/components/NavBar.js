@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { setAuthedUser } from '../actions/authedUser'
 
 class NavBar extends Component {
+  handleLogout = () => {
+    const { dispatch } = this.props
+    dispatch(setAuthedUser(null))
+  }
     render() {
         return (
+          <div>
             <nav>
               <ul>
                 <li>
@@ -33,7 +39,10 @@ class NavBar extends Component {
                     </li>
                 }
               </ul>
+              
             </nav>
+            {this.props.authedUser !== null && <button onClick={this.handleLogout}>Logout</button>}
+          </div>  
         )
     }
 }
