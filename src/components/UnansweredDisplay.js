@@ -29,7 +29,7 @@ class UnansweredDisplay extends Component {
     }
     render() {
         const { author } = this.props.poll
-        const { poll, authedUser } = this.props
+        const { poll } = this.props
         const { avatarURL } = this.props.userData
         return (
             <div>  

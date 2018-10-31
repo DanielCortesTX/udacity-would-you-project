@@ -24,7 +24,6 @@ function answerQuestion ({ qid, authedUser, answer}) {
 
 export function handleQuestionAnswer (info) {
     return (dispatch) => {
-
         return saveQuestionAnwser(info)
           .then(() => dispatch(answerQuestion(info)))
           .then(() => dispatch(updateUserAnswer(info)))
@@ -36,8 +35,6 @@ export function handleQuestionAnswer (info) {
 
 export function handleSaveQuestion (info) {
     return (dispatch) => {
-        
-
         return saveQuestion(info)
         .then((formattedQuestion) => {
             dispatch(addPoll(formattedQuestion))

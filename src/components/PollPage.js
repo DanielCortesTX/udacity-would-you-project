@@ -45,7 +45,7 @@ class PollPage extends Component {
 }
 
 function mapStateToProps ({ polls, authedUser, users }, props){
-    const { id } = this.props.params
+    const { id } = props.match.params
     const poll = polls[id]
     const userData = users[authedUser]
     const dummyData = {

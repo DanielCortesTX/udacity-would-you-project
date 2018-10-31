@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
 
 class NavBar extends Component {
   handleLogout = () => {
     const { dispatch } = this.props
     dispatch(setAuthedUser(null))
+    this.props.history.push('/')
   }
     render() {
         return (
@@ -53,4 +54,4 @@ function mapStateToProps ({ authedUser }){
     }
 }
 
-export default connect (mapStateToProps)(NavBar)
+export default withRouter(connect(mapStateToProps)(NavBar))

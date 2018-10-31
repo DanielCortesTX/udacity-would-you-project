@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { handleSaveQuestion } from '../actions/polls'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 class AddPoll extends Component {
     state = {
@@ -35,25 +36,23 @@ class AddPoll extends Component {
             author: authedUser
         }))
 
-        this.setState({
-
-        })
+        this.props.history.push('/')
     }
     render(){
         const { optionOneText, optionTwoText } = this.state
         const isDisabled = optionOneText === '' || optionTwoText === ''
         return (
             <div>
-            <p>The Add page</p>
+            <h2>Would you rather...</h2>
             <form onSubmit={this.handleSubmit}>
                 <p>Option One: </p>
-                <input 
+                <input
                 type="text"
                 value={optionOneText}
                 onChange={this.handleOne}
                 />
                 <p>Option Two: </p>
-                <input 
+                <input
                 type="text"
                 value={optionTwoText}
                 onChange={this.handleTwo}
@@ -74,4 +73,4 @@ function mapStateToProps ({ authedUser }) {
     }
 }
 
-export default connect(mapStateToProps)(AddPoll)
+export default withRouter(connect(mapStateToProps)(AddPoll))

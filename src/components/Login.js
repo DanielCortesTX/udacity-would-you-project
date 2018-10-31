@@ -26,7 +26,7 @@ class Login extends Component {
       <div className="App">
       
     <div>
-      {this.props.authedUser !== null ? <h1>Logged in as {this.props.authedUser}</h1> : <h1>Login to {this.props.message}</h1>}
+      {this.props.authedUser !== null ? <h1>Logged in as {this.props.authedUser}</h1> : <h1>Login to access Page</h1>}
       
         
         <select onChange={this.handleUserLogin} value={checkNull(this.props.authedUser)}>

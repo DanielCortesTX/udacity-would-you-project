@@ -23,13 +23,13 @@ class AnsweredDisplay extends Component {
             }
         }
         const calcPercent = (votes, total) => {
-            return ( votes / total ) * 100 
+            return ( votes / total ) * 100
         }
         return (
             <div className="standard-boundaries">
                 <h2>Would you rather...</h2>
                 <div className="answer-user-display">
-                    <img 
+                    <img
                         src={avatarURL}
                         alt={'?'}
                         className="avatar"
@@ -64,10 +64,9 @@ function mapStateToProps({ users, authedUser }){
         questions: []
       }
     return {
-        userData: userData ? userData : dummyUser
+        // userData: userData ? userData : dummyUser
+        authedUser
     }
 }
 
 export default connect(mapStateToProps)(AnsweredDisplay)
-
-// <h2>{userAnswer}</h2>
