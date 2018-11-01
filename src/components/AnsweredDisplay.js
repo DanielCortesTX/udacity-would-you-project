@@ -3,11 +3,15 @@ import { connect } from 'react-redux'
 
 class AnsweredDisplay extends Component {
     render() {
+        /*
+          @description page inherits data of user who made poll, poll data and the 
+            answer that the authedUser selected. Information relative to the page is 
+            extracted and used when necessary.
+        */
         const { optionOne, optionTwo, author } = this.props.poll
         const total = optionOne.votes.length + optionTwo.votes.length
-        const { userAnswer, userData } = this.props
+        const { userAnswer } = this.props
         const { avatarURL } = this.props.userData
-        console.log(userData)
         const checkAnswerOne = (userAnswer) => {
             if(userAnswer){
                 return 'answer-box ans-selected'
@@ -52,21 +56,4 @@ class AnsweredDisplay extends Component {
     }
 }
 
-function mapStateToProps({ users, authedUser }){
-    const userData = users[authedUser]
-    const dummyUser = {
-        id: 'standby',
-        name: 'Standby',
-        avatarURL: 'https://tylermcginnis.com/would-you-rather/sarah.jpg',
-        answers: {
-          
-        },
-        questions: []
-      }
-    return {
-        // userData: userData ? userData : dummyUser
-        authedUser
-    }
-}
-
-export default connect(mapStateToProps)(AnsweredDisplay)
+export default connect()(AnsweredDisplay)

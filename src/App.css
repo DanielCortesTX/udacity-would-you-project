@@ -22,12 +22,6 @@
   color: #61dafb;
 }
 
-.leaderboard-user {
-  display: flex;
-  flex-direction: flex;
-  border: 1px solid black;
-}
-
 .avatar {
   height: 50px;
   min-width: 50px;
@@ -39,14 +33,4 @@
 
 .test {
   list-style: none;
-}
-
-.user-block {
-  border: 1px solid black;
-  width: 200px;
-  padding: 5px;
-}
-
-.user-score {
-  padding: 5px;
 }

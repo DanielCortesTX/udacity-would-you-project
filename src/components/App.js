@@ -10,12 +10,14 @@ import DisplayPolls from './DisplayPolls'
 import PollPage from './PollPage'
 import AddPoll from './AddPoll'
 import NotFoundPage from './NotFoundPage'
-// import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
+  /*
+    @description route accessibility is dependent on if the store has a set 
+  */
   render() {
     if(!this.props.loggedIn){
       return (
@@ -52,20 +54,3 @@ function mapStateToProps ({ authedUser }){
 }
 
 export default connect(mapStateToProps)(App)
-
-// <Route path='/questions/:id' component={PollPage}/>
-
-// <Route path='/leaderboard' exact render={() => (
-//   this.props.loggedIn ? <Leaderboard /> : <Login message={'view Leaderboard'}/>
-// )}/>
-// <Route path='/' exact render={() => (
-//   this.props.loggedIn ? <DisplayPolls /> : <Login message={'view questions'}/>
-// )}/>
-
-// <Route path='/add' exact render={() => (
-//   this.props.loggedIn ? <AddPoll /> : <Login message={'add question'}/>
-// )}/>
-
-// <Route path='/questions/:id' render={() => (
-//   this.props.loggedIn ? <PollPage /> : <NotFoundPage />
-// )}/>

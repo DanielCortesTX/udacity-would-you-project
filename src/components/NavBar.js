@@ -11,39 +11,42 @@ class NavBar extends Component {
   }
     render() {
         return (
+          <div className="nav-box">
           <div>
             <nav>
-              <ul>
-                <li>
-                  <NavLink to='/leaderboard' exact activeClassName='active'>
+              <ul className="test">
+                <li className="nav-item">
+                  <NavLink to='/leaderboard' activeStyle={{background: "aquamarine"}}>
                     Leaderboard
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="/" exact activeClassName='active'>
+                <li className="nav-item">
+                  <NavLink exact to="/" activeStyle={{background: "aquamarine"}}>
                     Home
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to='/Login' exact activeClassName='active'>
+                <li className="nav-item">
+                  <NavLink to='/Login' activeStyle={{background: "aquamarine"}}>
                     Login
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to='/add' exact activeClassName='active'>
+                <li className="nav-item">
+                  <NavLink to='/add' activeStyle={{background: "aquamarine"}}>
                     Add Poll
                   </NavLink>
                 </li>
                 {this.props.authedUser !== null && 
-                    <li>
-                    Hello {this.props.authedUser}
+                    <li className="nav-item">
+                    Logged in as {this.props.authedUser}
                     </li>
                 }
               </ul>
-              
             </nav>
-            {this.props.authedUser !== null && <button onClick={this.handleLogout}>Logout</button>}
-          </div>  
+          </div>
+          {this.props.authedUser !== null && <button 
+            onClick={this.handleLogout}
+            >Logout</button>}
+          </div>
         )
     }
 }

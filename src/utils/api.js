@@ -5,6 +5,11 @@ import {
     _saveQuestionAnswer,
 } from './_DATA'
 
+/*
+  @description methods for getting and updating started data are imported,
+    formated and exported for use elsewhere.
+*/
+
 export function getInitialData () {
     return Promise.all([
         _getUsers(),

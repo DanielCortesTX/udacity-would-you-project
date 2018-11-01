@@ -30,6 +30,12 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps ({ users }){
+    /*
+      @description object of user ids are extracted from store. ids are used
+        to return an array of objects that have the sum of the users questions asked and 
+        quetions answered, the user id and the user's data. the objects are then sorted
+        by the score.
+    */
     const usersIds = Object.keys(users)
     const sortTotals = usersIds.map((userId) => {
         const userData = users[userId]
@@ -38,8 +44,6 @@ function mapStateToProps ({ users }){
         return { 'userScore': total, 'user': userId, 'userData': userData }
     })
     return {
-        // usersId: Object.keys(users)
-        //   .sort((a,b) => users[b].answers.length - users[a].timestamp)
         usersId: sortTotals.sort((a,b) => {
             return b.userScore - a.userScore
         }),
@@ -48,13 +52,3 @@ function mapStateToProps ({ users }){
 }
 
 export default connect(mapStateToProps)(Dashboard)
-
-// {this.props.usersId.map((id) => (
-    // <li key={id}>
-    //   <LeadUserDisplay id={id}/>
-    // </li>
-// )
-// )}
-
-// <p key={user.user}>{user.user} has a score of {user.userScore}</p>
-// <LeadUserDisplay id={id} userAnswers={userAnswers}/>

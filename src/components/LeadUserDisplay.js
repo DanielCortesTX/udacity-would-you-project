@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 class LeadUserDisplay extends Component {
+    /*
+      @description each display accepts user data and displays necessary particulars.
+    */
     render() {
         const { userData, userAnswers } = this.props
         const { name, avatarURL } = userData
@@ -8,7 +11,7 @@ class LeadUserDisplay extends Component {
         const total = question + userAnswers
         return (
             <div className="leaderboard-user">
-                <img 
+                <img
                     src={avatarURL}
                     alt={'?'}
                     className="avatar"
@@ -21,37 +24,6 @@ class LeadUserDisplay extends Component {
             </div>
         )
     }
-}
-
-// function mapStateToProps ({ users }, { id, userAnswers }){
-//     const user = users[id]
-//     const dummyData = {
-//         id: 'standby',
-//         name: 'Standby',
-//         avatarURL: '',
-//         answers: {
-//         },
-//         questions: []
-//     }
-//     const numAnswers = Object.keys(user.answers).length
-//     return {
-//         user: user ? user : dummyData,
-//         userAnswers
-//     }
-// }  
+} 
 
 export default LeadUserDisplay
-// export default connect(mapStateToProps)(LeadUserDisplay)
-
-// <div className="leaderboard-user">{user.name} has {user.questions.length} questions
-//             and {numAnswers} answers. Total: {user.questions.length + numAnswers}
-//             </div>
-
-
-// <div>
-                    // <img 
-                    //   src={avatarURL}
-                    //   alt={`No image`}
-                    //   className="avatar"
-                    // />
-//                 </div>

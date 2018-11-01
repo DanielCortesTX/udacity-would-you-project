@@ -9,12 +9,14 @@ class AddPoll extends Component {
         optionTwoText: ''
     }
     handleOne = (e) => {
+        /*
+          @description handleOne and Two sets local state for user input
+        */
         const optionOneText = e.target.value
 
         this.setState(() => ({
             optionOneText
         }))
-        console.log(optionOneText)
     }
     handleTwo = (e) => {
         const optionTwoText = e.target.value
@@ -22,9 +24,12 @@ class AddPoll extends Component {
         this.setState(() => ({
             optionTwoText
         }))
-        console.log(this.state.optionTwoText)
     }
     handleSubmit = (e) => {
+        /*
+          @description takes option one and two text from local state
+            dispatches information to reducer along with the authedUser 
+        */        
         e.preventDefault()
 
         const { optionOneText, optionTwoText } = this.state
@@ -42,7 +47,7 @@ class AddPoll extends Component {
         const { optionOneText, optionTwoText } = this.state
         const isDisabled = optionOneText === '' || optionTwoText === ''
         return (
-            <div>
+            <div className="display-polls">
             <h2>Would you rather...</h2>
             <form onSubmit={this.handleSubmit}>
                 <p>Option One: </p>

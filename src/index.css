@@ -21,6 +21,8 @@ code {
 
 .test {
   text-decoration: none;
+  display: flex;
+  flex-direction: row;
 }
 
 .answer-user-display {
@@ -40,4 +42,59 @@ code {
 .standard-boundaries {
   margin: 25px;
   padding: 15px;
+}
+
+.nav-item {
+  padding: 4px;
+  text-decoration: none;
+  border: 1px solid black;
+}
+
+.active {
+  text-decoration: none;
+}
+
+.display-polls {
+  margin: 20px;
+}
+
+.poll-layout {
+  border: 1px solid black;
+  padding: 5px;
+  text-decoration: none;
+  margin: 2px;
+}
+
+.poll-layout:hover {
+  background-color: aquamarine;
+}
+
+.leaderboard-user {
+  display: flex;
+  flex-direction: flex;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.user-block {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 200px;
+  padding: 5px;
+}
+
+.user-score {
+  padding: 5px;
+}
+
+.nav-box {
+  display: flex;
+
+  align-items: center;
+}
+
+.nav-box button {
+  width: 60px;
+  height: 20px;
+  margin: 10px;
 }

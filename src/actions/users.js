@@ -9,6 +9,11 @@ export function receiveUsers (users) {
     }
 }
 
+/*
+  @description actions below are used to update information of the users state
+    when the polls are updated.
+*/
+
 export function updateUserAnswer ({ qid, authedUser, answer }){
     return {
         type: UPDATE_USER_ANSWER,

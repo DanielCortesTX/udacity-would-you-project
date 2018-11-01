@@ -10,10 +10,11 @@ class PollPage extends Component {
             selectedOption: ''
         }
     }
-    componentDidUpdate = () => {
-        console.log(this.props.poll.optionOne.votes)
-        console.log(this.props.poll.optionTwo.votes)
-    }
+    /*
+      @description poll information is passed down and renders answered or
+        unanswered page depending on status. authed user's information affects
+        property passed to anser display.
+    */
     handleOptionChange = (changeEvent) => {
         this.setState({
             selectedOption: changeEvent.target.value
@@ -27,14 +28,19 @@ class PollPage extends Component {
         const userAnswer = optionOnePick === true ? true : false
         return (
             <div>
-                {poll ? 
+                {poll ?
                     <div>
-                    
-                    {isAnswered ? <AnsweredDisplay 
+                    {isAnswered ? <AnsweredDisplay
                         poll={poll}
                         userData={userData}
                         userAnswer={userAnswer}
-                        /> : <UnansweredDisplay userData={userData} poll={poll} />}
+                        /> 
+                        : 
+                        <UnansweredDisplay 
+                        userData={userData} 
+                        poll={poll} 
+                        />
+                    }
                     </div>
                     :
                     <h1>LOADING</h1>
@@ -47,7 +53,7 @@ class PollPage extends Component {
 function mapStateToProps ({ polls, authedUser, users }, props){
     const { id } = props.match.params
     const poll = polls[id]
-    const userData = users[authedUser]
+    const userData = users[poll.author]
     const dummyData = {
         id: '8xf0y6ziyjabvozdd253zz',
         author: 'standby',
@@ -70,31 +76,3 @@ function mapStateToProps ({ polls, authedUser, users }, props){
 }
 
 export default connect(mapStateToProps)(PollPage)
-
-// const optionOneYes = optionOnePick
-//         const optionTwoYes =  optionTwoPick
-
-// optionOneYes={optionOneYes}
-//                     optionTwoYes={optionTwoYes}
-
-// const isAnswered = poll.optionOne.votes.includes(authedUser) || poll.optionTwo.votes.includes(authedUser)
-
-// <div>
-//             {authedUser ? 
-//                 <div>
-//                 {poll ? 
-//                     <div>
-                    
-//                     {isAnswered ? <AnsweredDisplay 
-//                         poll={poll}
-//                         userData={userData}
-//                         userAnswer={userAnswer}
-//                         /> : <UnansweredDisplay userData={userData} poll={poll} />}
-//                     </div>
-//                     :
-//                     <h1>LOADING</h1>
-//                 } 
-//                 </div>
-//                 : <NotFoundPage />}
-            
-//             </div>

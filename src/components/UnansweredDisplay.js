@@ -10,14 +10,19 @@ class UnansweredDisplay extends Component {
         }
     }
     handleOptionChange = (changeEvent) => {
-        // console.log(changeEvent.target.value)
+        /*
+          @description local state handles which option is selected.
+        */
         this.setState({
             selectedOption: changeEvent.target.value
         })
     }
     handleAnswer = (e) => {
+        /*
+          @description user selection is taken from local state and dispatched
+            along with the id of the poll and the authedUser
+        */
         e.preventDefault()
-        console.log(this.state.selectedOption)
         const answer = this.state.selectedOption
         const qid = this.props.poll.id
         const { authedUser, dispatch } = this.props
@@ -28,15 +33,20 @@ class UnansweredDisplay extends Component {
         }))
     }
     render() {
+        /*
+          @description page inherits authedUser Data and poll data. authedUser is
+            gained from mapStateToProps. Information relative to the page is extracted
+            and used when necessary.
+        */
         const { author } = this.props.poll
         const { poll } = this.props
         const { avatarURL } = this.props.userData
+        const isDisabled = this.state.selectedOption === ''
         return (
-            <div>  
-                    <div>
+            <div>
                 <h2>Would you rather...</h2>
                 <div className="answer-user-display">
-                    <img 
+                    <img
                         src={avatarURL}
                         alt={'?'}
                         className="avatar"
@@ -44,8 +54,6 @@ class UnansweredDisplay extends Component {
                     <h4>{author} asked:</h4>
                 </div>
                 <form onSubmit={this.handleAnswer}>
-                <h2>{poll.author} says</h2>
-                <h4>Would you rather...</h4>
                     <div>
                         <label>
                         <input type="radio" value="optionOne"
@@ -62,13 +70,14 @@ class UnansweredDisplay extends Component {
                         {poll && poll.optionTwo.text}
                         </label>
                     </div>
-                    <button 
-                    type="submit"
-                    >Submit</button>
-                </form>  
-                </div>
+                    <button
+                        type="submit"
+                        disabled={isDisabled}
+                        >
+                        Submit
+                    </button>
+                </form>
             </div>
-                
         )
     }
 }
@@ -80,10 +89,3 @@ function mapStateToProps({ authedUser }){
 }
 
 export default connect(mapStateToProps)(UnansweredDisplay)
-
-// <p>Unanswered Page</p>
-//                     <p>{author}</p>
-//                     <p>{optionOne.text}</p>
-//                     <p>{optionTwo.text}</p>
-
-// optionOne, optionTwo, author

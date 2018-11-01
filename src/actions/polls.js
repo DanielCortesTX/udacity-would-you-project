@@ -13,6 +13,12 @@ export function receivePolls (polls) {
     }
 }
 
+/*
+  @description answerQuestion is sent to update the polls in store,
+    handleQuestionAnswer uses answerQuestion and uses imported api
+    function to update data.
+*/
+
 function answerQuestion ({ qid, authedUser, answer}) {
     return {
         type: ANSWER_POLL,
@@ -32,6 +38,12 @@ export function handleQuestionAnswer (info) {
           })
     }
 }
+
+/*
+  @description addpoll is sent to update the polls in store,
+    handleSaveQuestion uses addpoll and uses imported api
+    function to update data.
+*/
 
 export function handleSaveQuestion (info) {
     return (dispatch) => {
