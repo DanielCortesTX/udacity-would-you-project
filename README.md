@@ -5,7 +5,7 @@ To get started using application, in the file, in the command line:
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
-* 
+* SECOND SUBMISSION
 * This is my first time submitting via git and I have atempted to tailor my commit message to the guidlines. If there any any short coming on my part in this regard, please let me know.
 * This application is the result of create-react-app, cloning the _DATA.js file and   adding the requisite functionality.
 * The images for the user profiles were taken from the provided user images in the chirper react data in the chirper project. Incidentally, they were aready labeled with the 'would-you-rather-project'
