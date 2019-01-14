@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import UnansweredDisplay from './UnansweredDisplay'
 import AnsweredDisplay from './AnsweredDisplay'
+import NotFoundPage from './NotFoundPage'
 
 class PollPage extends Component {
     constructor(props){
@@ -21,14 +22,14 @@ class PollPage extends Component {
         })
     }
     render() {
-        const { poll, authedUser, userData } = this.props
+        const { poll, authedUser, userData, dummyData } = this.props
         const optionOnePick = poll.optionOne.votes.includes(authedUser)
         const optionTwoPick = poll.optionTwo.votes.includes(authedUser)
         const isAnswered = optionOnePick || optionTwoPick
         const userAnswer = optionOnePick === true ? true : false
         return (
             <div>
-                {poll ?
+                {poll !== dummyData ?
                     <div>
                     {isAnswered ? <AnsweredDisplay
                         poll={poll}
@@ -43,7 +44,7 @@ class PollPage extends Component {
                     }
                     </div>
                     :
-                    <h1>LOADING</h1>
+                    <NotFoundPage />
                 }
             </div>
         )
@@ -53,7 +54,7 @@ class PollPage extends Component {
 function mapStateToProps ({ polls, authedUser, users }, props){
     const { id } = props.match.params
     const poll = polls[id]
-    const userData = users[poll.author]
+    const userData = poll ? users[poll.author] : 'no author'
     const dummyData = {
         id: '8xf0y6ziyjabvozdd253zz',
         author: 'standby',
@@ -71,7 +72,8 @@ function mapStateToProps ({ polls, authedUser, users }, props){
         id,
         poll: poll ? poll : dummyData,
         authedUser,
-        userData
+        userData,
+        dummyData,
     }
 }
 
