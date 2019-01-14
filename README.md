@@ -1,6 +1,6 @@
 Udacity-would-you-rather
 
-* This application is the result of create-react-app, cloning the _DATA.js file and   adding the requisite functionality.
+* This application is the result of create-react-app, cloning the _DATA.js file provided by Udacity and   adding the requisite functionality.
 * The app.js file runs the application and has the application's routing. 
 * Upon loading, the login page is rendered. When a user is selected, the app loads the displayPolls page. The page renders the user's unanswered poll questions and will display the answered ones at the push of a button.
 * the unanswered page display the tro poll options on radials and submit will not be useable until an option is selected. Only one option can be selected. upon submission, the poll and user data is updates and the pollPage now renders the answered page.
@@ -11,6 +11,9 @@ Udacity-would-you-rather
 * the application uses react and the information for the app is kept in the redux store. All changes to data are changed in the store. Local state is only used for basic functionality.
 
 INSTALLATION
+
+* clone the project from:
+   `https://github.com/DanielCortesTX/udacity-would-you-project`
 
 * install all project dependencies with:
    `npm install`
