@@ -20,7 +20,7 @@ code {
 }
 
 .test {
-  text-decoration: none;
+  list-style-type: none;
   display: flex;
   flex-direction: row;
 }
@@ -44,11 +44,11 @@ code {
   padding: 15px;
 }
 
-.nav-item {
+/* .nav-item {
   padding: 4px;
   text-decoration: none;
   border: 1px solid black;
-}
+} */
 
 .active {
   text-decoration: none;
@@ -90,7 +90,7 @@ code {
 .nav-box {
   display: flex;
 
-  align-items: center;
+  /* align-items: center; */
 }
 
 .nav-box button {

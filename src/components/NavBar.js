@@ -11,41 +11,42 @@ class NavBar extends Component {
   }
     render() {
         return (
-          <div className="nav-box">
+          <div className="nav-box navbar">
           <div>
             <nav>
               <ul className="test">
-                <li className="nav-item">
+                <li className="nav-item nav-link">
                   <NavLink to='/leaderboard' activeStyle={{background: "aquamarine"}}>
                     Leaderboard
                   </NavLink>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item nav-link">
                   <NavLink exact to="/" activeStyle={{background: "aquamarine"}}>
                     Home
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink to='/Login' activeStyle={{background: "aquamarine"}}>
-                    Login
-                  </NavLink>
-                </li>
-                <li className="nav-item">
+                <li className="nav-item nav-link">
                   <NavLink to='/add' activeStyle={{background: "aquamarine"}}>
                     Add Poll
                   </NavLink>
                 </li>
+                <li className="nav-item nav-link">
+                  <NavLink to='/Login' activeStyle={{background: "aquamarine"}}>
+                    Login
+                  </NavLink>
+                </li>
                 {this.props.authedUser !== null && 
-                    <li className="nav-item">
+                    <li className="nav-item nav-link">
                     Logged in as {this.props.authedUser}
                     </li>
                 }
+                {this.props.authedUser !== null && <button 
+                  onClick={this.handleLogout}
+                  className="btn btn-primary"
+                  >Logout</button>}
               </ul>
             </nav>
           </div>
-          {this.props.authedUser !== null && <button 
-            onClick={this.handleLogout}
-            >Logout</button>}
           </div>
         )
     }
