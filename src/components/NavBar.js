@@ -11,43 +11,44 @@ class NavBar extends Component {
   }
     render() {
         return (
+          <nav className="navbar navbar-expand-sm">
           <div className="container">
-          <div className="navbar-nav">
-            <nav>
-              <ul className="test">
-                <li className="nav-item nav-link">
-                  <Link to='/leaderboard' activeStyle={{background: "aquamarine"}}>
+          <div className="navbar-nav nav-tabs">
+            <Link to='/leaderboard' 
+              className="nav-link nav-item">
                     Leaderboard
-                  </Link>
-                </li>
-                <li className="nav-item nav-link">
-                  <Link exact to="/" activeStyle={{background: "aquamarine"}}>
+            </Link>
+                
+                  <Link exact to="/" 
+                  className="nav-link nav-item">
                     Home
                   </Link>
-                </li>
-                <li className="nav-item nav-link">
-                  <Link to='/add' activeStyle={{background: "aquamarine"}}>
+                
+                  <Link to='/add' 
+                  className="nav-link nav-item">
                     Add Poll
                   </Link>
-                </li>
-                <li className="nav-item nav-link">
-                  <Link to='/Login' activeStyle={{background: "aquamarine"}}>
+                {this.props.authedUser !== null
+                  ?
+                  <Link to='/Login' 
+                  className="nav-link nav-item">
+                  Logged in as {this.props.authedUser}
+                  </Link>
+                  :
+                  <Link to='/Login' 
+                  className="nav-link nav-item">
                     Login
                   </Link>
-                </li>
-                {this.props.authedUser !== null && 
-                    <li className="nav-item nav-link">
-                    Logged in as {this.props.authedUser}
-                    </li>
                 }
-                {this.props.authedUser !== null && <button 
-                  onClick={this.handleLogout}
-                  className="btn btn-primary"
-                  >Logout</button>}
-              </ul>
-            </nav>
+              
+            
           </div>
+          {this.props.authedUser !== null && <button 
+            onClick={this.handleLogout}
+            className="btn btn-primary"
+            >Logout</button>}
           </div>
+          </nav>
         )
     }
 }
