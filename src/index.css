@@ -87,11 +87,11 @@ code {
   padding: 5px;
 }
 
-.nav-box {
+/* .nav-box {
   display: flex;
 
-  /* align-items: center; */
-}
+  align-items: center;
+} */
 
 .nav-box button {
   width: 60px;

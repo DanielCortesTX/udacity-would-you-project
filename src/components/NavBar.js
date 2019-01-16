@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink, withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
 
 class NavBar extends Component {
@@ -11,29 +11,29 @@ class NavBar extends Component {
   }
     render() {
         return (
-          <div className="nav-box navbar">
-          <div>
+          <div className="container">
+          <div className="navbar-nav">
             <nav>
               <ul className="test">
                 <li className="nav-item nav-link">
-                  <NavLink to='/leaderboard' activeStyle={{background: "aquamarine"}}>
+                  <Link to='/leaderboard' activeStyle={{background: "aquamarine"}}>
                     Leaderboard
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="nav-item nav-link">
-                  <NavLink exact to="/" activeStyle={{background: "aquamarine"}}>
+                  <Link exact to="/" activeStyle={{background: "aquamarine"}}>
                     Home
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="nav-item nav-link">
-                  <NavLink to='/add' activeStyle={{background: "aquamarine"}}>
+                  <Link to='/add' activeStyle={{background: "aquamarine"}}>
                     Add Poll
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="nav-item nav-link">
-                  <NavLink to='/Login' activeStyle={{background: "aquamarine"}}>
+                  <Link to='/Login' activeStyle={{background: "aquamarine"}}>
                     Login
-                  </NavLink>
+                  </Link>
                 </li>
                 {this.props.authedUser !== null && 
                     <li className="nav-item nav-link">
