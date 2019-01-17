@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+.drop-trim {
+  width: 50%;
+}
+
 .avatar {
   height: 50px;
   border-radius: 25px;

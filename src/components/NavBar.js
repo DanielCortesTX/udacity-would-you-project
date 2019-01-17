@@ -12,7 +12,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-sm">
+      <nav className="navbar navbar-expand-sm mb-4">
         <div className="container">
           <div className="navbar-nav nav-tabs">
             <Link to='/leaderboard' 

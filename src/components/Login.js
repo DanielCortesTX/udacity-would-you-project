@@ -27,9 +27,12 @@ class Login extends Component {
     }
     return (
       <div className="App">
-        <div>
-          {this.props.authedUser !== null ? <h1>Logged in as {this.props.authedUser}</h1> : <h1 className="lead">Login to access Page</h1>}
-          <select onChange={this.handleUserLogin} value={checkNull(this.props.authedUser)}>
+        <div className="container drop-trim">
+          {this.props.authedUser !== null ? <h1>Logged in as {this.props.authedUser}</h1> : <h1 className="display-4 pb-4">Login to access Page</h1>}
+          <select 
+            onChange={this.handleUserLogin} 
+            value={checkNull(this.props.authedUser)}
+            className="custom-select">
           {this.props.usersId.map((user) => (
             <option
               value={user} 
