@@ -47,7 +47,7 @@ class AddPoll extends Component {
         const { optionOneText, optionTwoText } = this.state
         const isDisabled = optionOneText === '' || optionTwoText === ''
         return (
-            <div className="display-polls">
+            <div className="container">
             <h2>Would you rather...</h2>
             <form onSubmit={this.handleSubmit}>
                 <p>Option One: </p>

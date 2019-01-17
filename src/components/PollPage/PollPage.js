@@ -28,7 +28,7 @@ class PollPage extends Component {
         const isAnswered = optionOnePick || optionTwoPick
         const userAnswer = optionOnePick === true ? true : false
         return (
-            <div>
+            <div className="container">
                 {poll !== dummyData ?
                     <div>
                     {isAnswered ? <AnsweredDisplay

@@ -18,7 +18,7 @@ class DisplayPolls extends Component {
     render() {
         const { answeredQuestions, unansweredQuestions } = this.props
         return (
-            <div className="display-polls">
+            <div className="display-polls container">
               <h2>Polls</h2>
               <button onClick={this.toggleView}>
                 {this.state.unanswered === true ? 'View answered Questions': 'View unanswered Questions'}
