@@ -11,7 +11,7 @@ class Dashboard extends Component {
         const { usersId } = this.props
         return (
             <div className="container">
-                <h2>Welcome to the leaderboard!</h2>
+                <h1 className="display-4 App mb-4">Welcome to the leaderboard!</h1>
                 <ul>
                     {usersId.map((user, index) => {
                         const id = user.id
