@@ -3,13 +3,13 @@ import '../App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Login from './Login'
-import Leaderboard from './Leaderboard'
+import Leaderboard from './Leaderboard/Leaderboard'
 import { handleInitialData } from '../actions/shared'
 import NavBar from './NavBar'
-import DisplayPolls from './DisplayPolls'
-import PollPage from './PollPage'
+import DisplayPolls from './DisplayPolls/DisplayPolls'
+import PollPage from './PollPage/PollPage'
 import AddPoll from './AddPoll'
-import NotFoundPage from './NotFoundPage'
+import NotFoundPage from './PollPage/NotFoundPage'
 
 class App extends Component {
   componentDidMount() {

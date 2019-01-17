@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { handleQuestionAnswer } from '../actions/polls'
+import { handleQuestionAnswer } from '../../actions/polls'
 
 class UnansweredDisplay extends Component {
     constructor(props){
