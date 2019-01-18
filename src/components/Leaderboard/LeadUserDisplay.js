@@ -10,17 +10,19 @@ class LeadUserDisplay extends Component {
         const question = userData.questions.length
         const total = question + userAnswers
         return (
-            <div className="leaderboard-user">
+            <div className="card test full-trim mb-4">
+                <div className="card-body">
                 <img
-                    src={avatarURL}
-                    alt={'?'}
-                    className="avatar"
-                />
-                <div className="user-block">
-                    {`${name} has:`}
-                    <p>{`${question} question(s) and ${userAnswers} answer(s)`}</p>
+                src={avatarURL}
+                alt={'?'}
+                className="avatar"
+            />
                 </div>
-                <div className="user-score">{`Score: ${total}`}</div>
+                <div className="card-body">
+                    <h1 className="display-4">{`${name} has:`}</h1>
+                    <p className="lead">{`${question} question(s) and ${userAnswers} answer(s)`}</p>
+                </div>
+                <div className="card-body bg-dark text-white col-3"><h4 className="display-4">{`Score: ${total}`}</h4></div>
             </div>
         )
     }

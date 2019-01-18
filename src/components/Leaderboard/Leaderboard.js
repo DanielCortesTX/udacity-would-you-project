@@ -10,20 +10,20 @@ class Dashboard extends Component {
     render() {
         const { usersId } = this.props
         return (
-            <div className="container">
-                <h1 className="display-4 App mb-4">Welcome to the leaderboard!</h1>
-                <ul>
+            <div className="container display-component">
+                <h1 className="display-4 mb-4">Welcome to the leaderboard!</h1>
+                <div>
                     {usersId.map((user, index) => {
                         const id = user.id
                         const userAnswers = Object.keys(user.userData.answers).length
                         const userData = user.userData
                         return (
-                            <li key={index} className="test">
+                            <div key={index}>
                                 <LeadUserDisplay key={id} userAnswers={userAnswers} userData={userData}/>
-                            </li>
+                            </div>
                         )
                     })}
-                </ul>
+                </div>
             </div>
         )
     }
