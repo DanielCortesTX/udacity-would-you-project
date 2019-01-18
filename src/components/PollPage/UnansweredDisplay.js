@@ -43,36 +43,38 @@ class UnansweredDisplay extends Component {
         const { avatarURL } = this.props.userData
         const isDisabled = this.state.selectedOption === ''
         return (
-            <div>
-                <h2>Would you rather...</h2>
-                <div className="answer-user-display">
+            <div className="display-component">
+                <div className="card test p-4 mb-4">
                     <img
                         src={avatarURL}
                         alt={'?'}
                         className="avatar"
                     />
-                    <h4>{author} asked:</h4>
+                    <h1 className="display-4">{author} asked: Would you rather...</h1>
                 </div>
                 <form onSubmit={this.handleAnswer}>
-                    <div>
+                    <div className="form-check pl-0">
                         <label>
                         <input type="radio" value="optionOne"
                         checked={this.state.selectedOption === 'optionOne'}
-                        onChange={this.handleOptionChange}/>
+                        onChange={this.handleOptionChange}
+                        className="form-check-input pr-1"/>
                         {poll && poll.optionOne.text}
                         </label>
                     </div>
-                    <div>
+                    <div className="pb-3">
                         <label>
                         <input type="radio" value="optionTwo"
                         checked={this.state.selectedOption === 'optionTwo'}
-                        onChange={this.handleOptionChange}/>
+                        onChange={this.handleOptionChange}
+                        className="form-check-input pr-1"/>
                         {poll && poll.optionTwo.text}
                         </label>
                     </div>
                     <button
                         type="submit"
                         disabled={isDisabled}
+                        className="btn btn-primary"
                         >
                         Submit
                     </button>
