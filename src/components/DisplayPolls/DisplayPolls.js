@@ -18,23 +18,27 @@ class DisplayPolls extends Component {
     render() {
         const { answeredQuestions, unansweredQuestions } = this.props
         return (
-            <div className="display-polls container">
-              <h2>Polls</h2>
-              <button onClick={this.toggleView}>
+            <div className="container display-component">
+              <h1 className="display-4 App mb-4">Polls</h1>
+			  <button 
+				  onClick={this.toggleView}
+				  className="btn btn-primary mb-4">
                 {this.state.unanswered === true ? 'View answered Questions': 'View unanswered Questions'}
-              </button>
+			  </button>
+			  <div className="drop-trim">
               {this.state.unanswered === true ?
                 unansweredQuestions.map((poll) => (
-                    <div key={poll.id} className="poll-layout">
+                    <div key={poll.id} className="mb-4">
                         <PollLink poll={poll}/>
                     </div>
                 )) :
                 answeredQuestions.map((poll) => (
-                    <div key={poll.id} className="poll-layout">
+                    <div key={poll.id} className="mb-4">
                       <PollLink poll={poll}/>
                     </div>
                 ))
-              }
+			  }
+			  </div>
             </div>
         )
     }

@@ -58,15 +58,12 @@ code {
   text-decoration: none;
 }
 
-.display-polls {
-  margin: 20px;
-}
-
 .poll-layout {
-  border: 1px solid black;
+  /* border: 1px solid black;
   padding: 5px;
   text-decoration: none;
-  margin: 2px;
+  margin: 2px; */
+  text-decoration: none;
 }
 
 .poll-layout:hover {
@@ -101,4 +98,18 @@ code {
   width: 60px;
   height: 20px;
   margin: 10px;
+}
+
+.App {
+  text-align: center;
+}
+
+.card-preview {
+  text-decoration: none !important;
+}
+
+.display-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

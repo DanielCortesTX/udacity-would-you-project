@@ -11,13 +11,18 @@ class PollDisplay extends Component {
         const teaseOne = optionOne.text.substring(0, 10)
         const teaseTwo = optionTwo.text.substring(0, 10)
         return (
-            <Link to={`/questions/${id}`}>
-                <div>
-                    <p>Would you rather...</p>
+            <div className="card card-body card-preview">
+                    <h5 className="">Would you rather...</h5>
                     <p>{teaseOne}......</p>
                     <p>{teaseTwo}......</p>
-                </div>
+                    <Link 
+                to={`/questions/${id}`}
+                className="btn btn-primary btn-lg"
+                >
+                View full Poll
             </Link>
+                    
+                </div>
         )
     }
 }
