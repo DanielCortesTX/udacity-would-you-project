@@ -8,12 +8,12 @@ import { receivePolls } from './polls'
 */
 
 export function handleInitialData () {
-    return (dispatch) => {
-        return getInitialData()
-          .then(({ users, polls }) => {
-              dispatch(receiveUsers(users))
-              dispatch(receivePolls(polls))
-              dispatch(setAuthedUser(null))
-          })
-    }
+  return (dispatch) => {
+    return getInitialData()
+      .then(({ users, polls }) => {
+        dispatch(receiveUsers(users))
+        dispatch(receivePolls(polls))
+        dispatch(setAuthedUser(null))
+      })
+  }
 }
