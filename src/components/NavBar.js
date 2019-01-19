@@ -15,17 +15,23 @@ class NavBar extends Component {
       <nav className="navbar navbar-expand-sm mb-4">
         <div className="container">
           <div className="navbar-nav nav-tabs">
-            <Link to='/leaderboard' 
-              className="nav-link nav-item">
-                    Leaderboard
+            <Link 
+              to='/leaderboard' 
+              className="nav-link nav-item"
+            >
+              Leaderboard
             </Link>    
-            <Link to="/" 
-              className="nav-link nav-item">
-                Home
+            <Link 
+              to="/" 
+              className="nav-link nav-item"
+            >
+              Home
             </Link>  
-            <Link to='/add' 
-              className="nav-link nav-item">
-                Add Poll
+            <Link 
+              to='/add' 
+              className="nav-link nav-item"
+            >
+              Add Poll
             </Link>
             {this.props.authedUser !== null
               ?
