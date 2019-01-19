@@ -48,25 +48,34 @@ class AddPoll extends Component {
         const isDisabled = optionOneText === '' || optionTwoText === ''
         return (
             <div className="container">
-            <h2>Would you rather...</h2>
-            <form onSubmit={this.handleSubmit}>
-                <p>Option One: </p>
-                <input
-                type="text"
-                value={optionOneText}
-                onChange={this.handleOne}
-                />
-                <p>Option Two: </p>
-                <input
-                type="text"
-                value={optionTwoText}
-                onChange={this.handleTwo}
-                />
-                <button
-                type='submit'
-                disabled={isDisabled}
-                >Submit</button>
-            </form>
+                <div className="display-component">
+                <h1 className="display-4 pb-4">Would you rather...</h1>
+                <form onSubmit={this.handleSubmit} className="drop-trim">
+                    <div className="form-group">
+                        <label className="lead">Option One: </label>
+                        <input
+                            type="text"
+                            value={optionOneText}
+                            onChange={this.handleOne}
+                            className="full-trim form-control"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="lead pt-2">Option Two: </label>
+                        <input
+                            type="text"
+                            value={optionTwoText}
+                            onChange={this.handleTwo}
+                            className="full-trim form-control"
+                        />
+                    </div>
+                    <button
+                    type='submit'
+                    disabled={isDisabled}
+                    className="btn btn-primary"
+                    >Submit</button>
+                </form>
+                </div>
             </div>
         )
     }
