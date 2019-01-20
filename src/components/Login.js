@@ -12,7 +12,7 @@ class Login extends Component {
     const selection = event.target.value !== 'none' ? event.target.value : null
     const { dispatch } = this.props
     dispatch(setAuthedUser(selection))
-    if(window.location.pathname === '/Login'){
+    if(this.props.location.pathname === '/Login'){
       return this.props.history.push('/')
     }
     
