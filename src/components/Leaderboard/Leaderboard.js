@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 import LeadUserDisplay from './LeadUserDisplay'
 
 class Dashboard extends Component {
-  componentDidUpdate(){
-    console.log(this.props.usersId)
-    console.log(this.props.users)
-  }
   render() {
     const { usersId } = this.props
     return (
