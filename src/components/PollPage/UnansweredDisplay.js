@@ -47,7 +47,7 @@ class UnansweredDisplay extends Component {
         <div className="card test p-4 mb-4">
           <img
             src={avatarURL}
-            alt={'?'}
+            alt={'No image available'}
             className="avatar"
           />
 					<h1 className="display-4">
