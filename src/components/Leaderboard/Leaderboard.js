@@ -1,28 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import LeadUserDisplay from './LeadUserDisplay'
 
-class Dashboard extends Component {
-  render() {
-    const { usersId } = this.props
-    return (
-      <div className="container display-component">
-        <h1 className="display-4 mb-4">Welcome to the leaderboard!</h1>
-        <div>
-          {usersId.map((user, index) => {
-            const id = user.id
-            const userAnswers = Object.keys(user.userData.answers).length
-            const userData = user.userData
-            return (
-              <div key={index}>
-                <LeadUserDisplay key={id} userAnswers={userAnswers} userData={userData}/>
-              </div>
-            )
-          })}
-        </div>
+const Leaderboard = ({usersId}) => {
+  return (
+    <div className="container display-component">
+      <h1 className="display-4 mb-4">Welcome to the leaderboard!</h1>
+      <div>
+        {usersId.map((user, index) => {
+          const id = user.id
+          const userAnswers = Object.keys(user.userData.answers).length
+          const userData = user.userData
+          return (
+            <div key={index}>
+              <LeadUserDisplay key={id} userAnswers={userAnswers} userData={userData}/>
+            </div>
+          )
+        })}
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 function mapStateToProps ({ users }){
@@ -42,9 +39,8 @@ function mapStateToProps ({ users }){
   return {
     usersId: sortTotals.sort((a,b) => {
       return b.userScore - a.userScore
-    }),
-    users: usersIds
+    })
   }
 }
 
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps)(Leaderboard)
