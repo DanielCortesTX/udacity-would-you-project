@@ -47,7 +47,7 @@ class UnansweredDisplay extends Component {
         <div className="card test p-4 mb-4">
           <img
             src={avatarURL}
-            alt={'No image available'}
+            alt={'http://via.placeholder.com/128x193?text=No%20Cover'}
             className="avatar"
           />
 					<h1 className="display-4">
