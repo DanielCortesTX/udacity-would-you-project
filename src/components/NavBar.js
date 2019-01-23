@@ -61,9 +61,9 @@ class NavBar extends Component {
 }
 
 function mapStateToProps ({ authedUser }){
-    return {
-        authedUser
-    }
+  return {
+    authedUser
+  }
 }
 
 export default withRouter(connect(mapStateToProps)(NavBar))
