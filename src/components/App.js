@@ -10,6 +10,7 @@ import DisplayPolls from './DisplayPolls/DisplayPolls'
 import PollPage from './PollPage/PollPage'
 import AddPoll from './AddPoll'
 import NotFoundPage from './PollPage/NotFoundPage'
+import Footer from './layout/Footer'
 
 class App extends Component {
   componentDidMount() {
@@ -25,6 +26,7 @@ class App extends Component {
           <Fragment>
             <NavBar />
             <Login />
+            <Footer />
           </Fragment>
         </Router>
       )
@@ -41,6 +43,7 @@ class App extends Component {
           <Route path='/questions/:id' component={PollPage}/>
           <Route component={NotFoundPage}/>
         </Switch>
+        <Footer />
         </Fragment>
       </Router>
     )
