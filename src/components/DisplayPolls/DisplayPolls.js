@@ -22,7 +22,7 @@ class DisplayPolls extends Component {
         <h1 className="display-4 App mb-4">Polls</h1>
 			  <button 
 				  onClick={this.toggleView}
-					className="btn btn-primary mb-4"
+					className="btn btn-success mb-4"
 					>
             {this.state.unanswered === true ? 'View answered Questions': 'View unanswered Questions'}
 			  </button>
