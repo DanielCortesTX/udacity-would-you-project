@@ -19,7 +19,6 @@ class DisplayPolls extends Component {
   render() {
     const { answeredQuestions, unansweredQuestions } = this.props
     const numberCheck = () => {
-      // const { answeredQuestions, unansweredQuestions } = this.props
       if(answeredQuestions.length || unansweredQuestions.length > 1){
         return "container display-component"
       } else {
