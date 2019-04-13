@@ -6,16 +6,16 @@ const AnsweredDisplay = ({poll, userAnswer, userData}) => {
   const { avatarURL } = userData
   const checkAnswerOne = (userAnswer) => {
     if(userAnswer){
-      return 'card card-body bg-dark text-white mb-2'
+      return 'card card-body bg-dark text-white mb-2 drop-trim'
     } else {
-      return 'card card-body mb-2'
+      return 'card card-body mb-2 drop-trim'
     }
   }
   const checkAnswerTwo = (userAnswer) => {
     if(!userAnswer){
-      return 'card card-body bg-dark text-white mb-4'
+      return 'card card-body bg-dark text-white mb-4 drop-trim'
     } else {
-      return 'card card-body mb-4'
+      return 'card card-body mb-4 drop-trim'
     }
   }
   const calcPercent = (votes, total) => {

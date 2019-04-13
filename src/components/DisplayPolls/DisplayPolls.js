@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+// import classnames from 'classnames'
 import PollLink from './PollLink'
 
 class DisplayPolls extends Component {
@@ -26,7 +27,7 @@ class DisplayPolls extends Component {
 					>
             {this.state.unanswered === true ? 'View answered Questions': 'View unanswered Questions'}
 			  </button>
-			  <div className="drop-trim">
+        <div className="drop-trim">
 					{this.state.unanswered === true
 						?
             unansweredQuestions.map((poll) => (
@@ -77,3 +78,5 @@ function mapStateToProps ({ polls, authedUser }){
 }
 
 export default connect(mapStateToProps)(DisplayPolls)
+
+// <div className={classnames('drop-trim', { 'login-pad' : answeredQuestions.length || unansweredQuestions.length < 5})}>

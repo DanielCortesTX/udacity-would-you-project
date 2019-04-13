@@ -43,7 +43,7 @@ class UnansweredDisplay extends Component {
     const { avatarURL } = this.props.userData
     const isDisabled = this.state.selectedOption === ''
     return (
-      <div className="display-component">
+      <div className="display-component login-pad">
         <div className="card test p-4 mb-4">
           <img
             src={avatarURL}
