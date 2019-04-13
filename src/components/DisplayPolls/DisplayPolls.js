@@ -18,8 +18,16 @@ class DisplayPolls extends Component {
   }
   render() {
     const { answeredQuestions, unansweredQuestions } = this.props
+    const numberCheck = () => {
+      // const { answeredQuestions, unansweredQuestions } = this.props
+      if(answeredQuestions.length || unansweredQuestions.length > 1){
+        return "container display-component"
+      } else {
+        return "container display-component login-pad"
+      }
+    }
     return (
-      <div className="container display-component">
+      <div className={numberCheck()}>
         <h1 className="display-4 App mb-4">Polls</h1>
 			  <button 
 				  onClick={this.toggleView}
