@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
-import { setAuthedUser } from '../actions/authedUser'
+import { setAuthedUser } from '../../actions/authedUser'
 
 class NavBar extends Component {
   handleLogout = () => {
@@ -12,9 +12,9 @@ class NavBar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-sm mb-4">
+      <nav className="navbar navbar-expand-md mb-4">
         <div className="container">
-          <div className="navbar-nav nav-tabs">
+          <div className="navbar-nav nav-tabs collapse navbar-collapse">
             <Link 
               to='/leaderboard' 
               className="nav-link nav-item"
