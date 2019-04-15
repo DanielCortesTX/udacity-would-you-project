@@ -25,9 +25,16 @@ class Login extends Component {
         return 'none'
       }
     }
+    const checkWindow = () => {
+      if(window.innerWidth < 576){
+        return 'container'
+      } else {
+        return 'container drop-trim'
+      }
+    }
     return (
       <div className="login-pad">
-        <div className="container drop-trim">
+        <div className={checkWindow()}>
           {this.props.authedUser !== null ? <h1 className="display-4 pb-4">Hello {this.props.authedUser}</h1> : <h1 className="display-4 pb-4">Login to access page</h1>}
           <select 
             onChange={this.handleUserLogin} 
