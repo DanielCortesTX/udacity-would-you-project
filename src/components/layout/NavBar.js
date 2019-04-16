@@ -9,12 +9,25 @@ class NavBar extends Component {
     dispatch(setAuthedUser(null))
     this.props.history.push('/')
   }
-
   render() {
+    const checkHeight = () => {
+      if(window.innerWidth > 576){
+        return 'container collapse navbar-collapse'
+      } else {
+        return 'container collapse navbar-collapse d-flex flex-column'
+      }
+    }
     return (
       <nav className="navbar navbar-expand-md mb-4">
-        <div className="container">
-          <div className="navbar-nav nav-tabs collapse navbar-collapse">
+        <div className="container collapse navbar-collapse">
+          <div className="navbar-nav nav-tabs">
+          {this.props.authedUser !== null
+            &&
+            <Link to='/Login' 
+              className="nav-link nav-item">
+                Hello {this.props.authedUser}
+            </Link>
+          }
             <Link 
               to='/leaderboard' 
               className="nav-link nav-item"
@@ -33,27 +46,17 @@ class NavBar extends Component {
             >
               Add Poll
             </Link>
-            {this.props.authedUser !== null
-              ?
-              <Link to='/Login' 
-                className="nav-link nav-item">
-                  Logged in as {this.props.authedUser}
-              </Link>
-              :
+            {this.props.authedUser === null ?
               <Link to='/Login' 
                   className="nav-link nav-item">
                     Login
                   </Link>
-            }      
+              :
+              <Link to="/Login" className="nav-link nav-item" onClick={this.handleLogout}>
+                Logout
+              </Link>
+            }
           </div>
-          {this.props.authedUser !== null 
-            && 
-              <button 
-                onClick={this.handleLogout}
-                className="btn btn-primary">
-                  Logout
-              </button>
-          }
         </div>
       </nav>
     )
@@ -67,3 +70,9 @@ function mapStateToProps ({ authedUser }){
 }
 
 export default withRouter(connect(mapStateToProps)(NavBar))
+
+// <button 
+//                   onClick={this.handleLogout}
+//                   className="nav-link nav-item">
+//                     Logout
+//                 </button>
