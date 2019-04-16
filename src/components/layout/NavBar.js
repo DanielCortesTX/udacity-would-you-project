@@ -10,24 +10,17 @@ class NavBar extends Component {
     this.props.history.push('/')
   }
   render() {
-    const checkHeight = () => {
-      if(window.innerWidth > 576){
-        return 'container collapse navbar-collapse'
-      } else {
-        return 'container collapse navbar-collapse d-flex flex-column'
-      }
-    }
     return (
       <nav className="navbar navbar-expand-md mb-4">
         <div className="container collapse navbar-collapse">
           <div className="navbar-nav nav-tabs">
-          {this.props.authedUser !== null
-            &&
-            <Link to='/Login' 
-              className="nav-link nav-item">
-                Hello {this.props.authedUser}
-            </Link>
-          }
+            {this.props.authedUser !== null
+              &&
+              <Link to='/Login' 
+                className="nav-link nav-item">
+                  Hello {this.props.authedUser}
+              </Link>
+            }
             <Link 
               to='/leaderboard' 
               className="nav-link nav-item"
@@ -70,9 +63,3 @@ function mapStateToProps ({ authedUser }){
 }
 
 export default withRouter(connect(mapStateToProps)(NavBar))
-
-// <button 
-//                   onClick={this.handleLogout}
-//                   className="nav-link nav-item">
-//                     Logout
-//                 </button>
