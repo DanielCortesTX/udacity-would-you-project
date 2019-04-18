@@ -2,15 +2,12 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className="bg-dark py-3 mt-3">
+    <div className="bg-dark py-3 mt-5">
       <div className="container">
-        <div className="d-flex flex-row justify-content-center">
-          <i className="fas fa-cube pr-1 text-info"></i>
-          <p className="text-info">Portfolio Project for Udacity React Nanodegree.</p>
-        </div>
-        <div className="d-flex flex-row justify-content-center">
-          <i className="fas fa-archive pr-1 text-info"></i>
-          <p className="text-info">Original Users and data was provided.</p>
+        <div className="d">
+          <p className="text-info lead text-center">Designed by Daniel Cortes.</p>
+          <p className="text-info lead text-center">Portfolio Project for Udacity React Nanodegree.</p>
+          <p className="text-info lead text-center">Original Users and data was provided.</p>
         </div>
       </div>
     </div>

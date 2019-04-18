@@ -33,10 +33,10 @@ class AddPoll extends Component {
     const isDisabled = optionOneText === '' || optionTwoText === ''
       return (
         <div className="container">
-          <div className="display-component">
+          <div className="display-component my-5">
             <h1 className="display-4 pb-4">Would you rather...</h1>
             <form onSubmit={this.handleSubmit} className="drop-trim">
-              <div className="form-group">
+              <div className="form-group pb-3">
                 <label className="lead">Option One: </label>
                   <input
                     type="text"
@@ -46,7 +46,7 @@ class AddPoll extends Component {
                     className="full-trim form-control"
                   />
               </div>
-              <div className="form-group">
+              <div className="form-group pb-3">
                 <label className="lead pt-2">Option Two: </label>
                 <input
                   type="text"
