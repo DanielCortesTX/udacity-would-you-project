@@ -34,7 +34,7 @@ class AddPoll extends Component {
       return (
         <div className="container">
           <div className="display-component my-5">
-            <h1 className="display-4 pb-4">Would you rather...</h1>
+            <h1 className="display-4 pb-4 text-center">Would you rather...</h1>
             <form onSubmit={this.handleSubmit} className="drop-trim">
               <div className="form-group pb-3">
                 <label className="lead">Option One: </label>

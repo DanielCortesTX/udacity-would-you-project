@@ -5,7 +5,7 @@ import LeadUserDisplay from './LeadUserDisplay'
 const Leaderboard = ({usersId}) => {
   return (
     <div className="container display-component">
-      <h1 className="display-4 mb-4">Welcome to the leaderboard!</h1>
+      <h1 className="display-4 mb-4 text-center">Welcome to the leaderboard!</h1>
       <div>
         {usersId.map((user, index) => {
           const id = user.id

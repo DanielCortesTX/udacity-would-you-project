@@ -21,6 +21,10 @@ code {
   width: 75%;
 }
 
+.half-trim {
+  width: 50%;
+}
+
 .full-trim {
   width: 100%;
   justify-content: center;

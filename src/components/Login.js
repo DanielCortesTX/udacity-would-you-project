@@ -27,7 +27,7 @@ class Login extends Component {
     }
     return (
       <div className="login-pad">
-        <div className="container drop-trim">
+        <div className="container half-trim">
           {this.props.authedUser !== null ? <h1 className="display-4 pb-4 text-center">Hello {this.props.authedUser}</h1> : <h1 className="display-4 pb-4 text-center">Login to access page</h1>}
           <select 
             onChange={this.handleUserLogin} 
