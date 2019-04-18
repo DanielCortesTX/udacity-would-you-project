@@ -6,16 +6,16 @@ const AnsweredDisplay = ({poll, userAnswer, userData}) => {
   const { avatarURL } = userData
   const checkAnswerOne = (userAnswer) => {
     if(userAnswer){
-      return 'card card-body bg-dark text-white mb-2 drop-trim'
+      return 'card card-body bg-dark text-white mb-2 drop-trim text-center'
     } else {
-      return 'card card-body mb-2 drop-trim'
+      return 'card card-body mb-2 drop-trim text-center'
     }
   }
   const checkAnswerTwo = (userAnswer) => {
     if(!userAnswer){
-      return 'card card-body bg-dark text-white mb-4 drop-trim'
+      return 'card card-body bg-dark text-white mb-4 drop-trim text-center'
     } else {
-      return 'card card-body mb-4 drop-trim'
+      return 'card card-body mb-4 drop-trim text-center'
     }
   }
   const calcPercent = (votes, total) => {
@@ -41,7 +41,7 @@ const AnsweredDisplay = ({poll, userAnswer, userData}) => {
 				</p>
         {userAnswer && <p className="text-muted">Including you.</p>}
       </div>
-			<h1 className="display-4">
+			<h1 className="display-4 my-5">
 				OR....
 			</h1>
       <div className={checkAnswerTwo(userAnswer)}>
