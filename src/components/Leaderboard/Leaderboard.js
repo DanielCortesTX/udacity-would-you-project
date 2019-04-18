@@ -13,7 +13,7 @@ const Leaderboard = ({usersId}) => {
           const userData = user.userData
           return (
             <div key={index}>
-              <LeadUserDisplay key={id} userAnswers={userAnswers} userData={userData}/>
+              <LeadUserDisplay key={id} userAnswers={userAnswers} userData={userData} className=""/>
             </div>
           )
         })}
