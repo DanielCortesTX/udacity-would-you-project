@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import classnames from 'classnames'
 import PollLink from './PollLink'
 
 class DisplayPolls extends Component {

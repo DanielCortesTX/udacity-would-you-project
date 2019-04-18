@@ -33,9 +33,7 @@ code {
 .leaderDisplay {
   display: flex;
   flex-direction: row;
-  /* width: 50%; */
   justify-content: space-around;
-  /* height: 200px; */
 }
 
 .leaderFont {
@@ -74,21 +72,11 @@ code {
   padding: 15px;
 }
 
-/* .nav-item {
-  padding: 4px;
-  text-decoration: none;
-  border: 1px solid black;
-} */
-
 .active {
   text-decoration: none;
 }
 
 .poll-layout {
-  /* border: 1px solid black;
-  padding: 5px;
-  text-decoration: none;
-  margin: 2px; */
   text-decoration: none;
 }
 
@@ -113,12 +101,6 @@ code {
 .user-score {
   padding: 5px;
 }
-
-/* .nav-box {
-  display: flex;
-
-  align-items: center;
-} */
 
 .nav-box button {
   width: 60px;
