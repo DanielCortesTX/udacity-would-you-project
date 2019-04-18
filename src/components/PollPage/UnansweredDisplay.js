@@ -43,8 +43,8 @@ class UnansweredDisplay extends Component {
     const { avatarURL } = this.props.userData
     const isDisabled = this.state.selectedOption === ''
     return (
-      <div className="display-component login-pad">
-        <div className="card test p-4 mb-4">
+      <div className="display-component">
+        <div className="card test p-4 my-4">
           <img
             src={avatarURL}
             alt={''}
@@ -54,9 +54,9 @@ class UnansweredDisplay extends Component {
 						{author} asked: Would you rather...
 					</h1>
         </div>
-        <form onSubmit={this.handleAnswer}>
+        <form onSubmit={this.handleAnswer} className="my-4">
           <div className="form-check pl-0">
-            <label>
+            <label className="lead">
 						<input 
 							type="radio" 
 							value="optionOne"
@@ -68,7 +68,7 @@ class UnansweredDisplay extends Component {
             </label>
           </div>
           <div className="pb-3">
-          	<label>
+          	<label className="lead">
 							<input 
 								type="radio" 
 								value="optionTwo"
@@ -82,7 +82,7 @@ class UnansweredDisplay extends Component {
           <button
             type="submit"
             disabled={isDisabled}
-            className="btn btn-primary"
+            className="btn btn-primary mt-3"
           >
             Submit
           </button>
